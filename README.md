@@ -2,7 +2,7 @@
   
 We published our project to heroku, people can easily access our project through the URL:
   
-https://cse6242-team053.herokuapp.com/
+https://web-dev-visualization.herokuapp.com/
 
 ## Packages
   
