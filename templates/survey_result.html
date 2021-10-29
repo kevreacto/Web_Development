@@ -1,0 +1,22 @@
+{% extends "index.html" %} {% block content %}
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+  <div
+    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+  >
+    <h1 id="dashboard-name" class="h2">Survey Result</h1>
+  </div>
+
+  <!-- Add your content here -->
+  <h5>Most Efficient Intervention Policy</h5>
+  <div id="survey_result"></div>
+  <h5>How Long COVID-19 pandemic will end</h5>
+  <div id="survey_result_covid_expection"></div>
+  <h5>Level of Satisfaction to the Website</h5>
+  <div id="survey_result_website"></div>
+</main>
+
+<script
+  src="{{ url_for('static',filename='scripts/survey_result.js') }}"
+  charset="utf-8"
+></script>
+{% endblock %}

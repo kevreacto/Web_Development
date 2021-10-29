@@ -1,0 +1,84 @@
+{% extends "index.html" %} {% block content %}
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+  <div
+    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+  >
+    <h1 id="dashboard-name" class="h2">Survey</h1>
+  </div>
+
+  <!-- Add your content here -->
+  <div>
+    <form action="/PersistSurveyData" method="post" id="surveyForm">
+      Gender: <input type="radio" name="gender" value="male" /> Male
+      <input type="radio" name="gender" value="female" /> Female<br />
+      Age:
+      <select name="age" id="">
+        <option value="below_18">Below 18</option>
+        <option value="18 to 35">18 to 35</option>
+        <option value="35 to 65">35 to 65</option>
+        <option value="over 65">over 65</option>
+      </select>
+
+      <br /><br /><br /><br />
+
+      1. At which level do you think COVID-19 impacts your personal life?<br />
+      <input type="radio" name="impact_life" value="5" /> Strongly impacted
+      <input type="radio" name="impact_life" value="4" /> 75% impacted
+      <input type="radio" name="impact_life" value="3" /> 50% impacted
+      <input type="radio" name="impact_life" value="2" /> 25% impacted
+      <input type="radio" name="impact_life" value="1" /> No impact
+      <br />
+      <br />
+
+      2. At which level do you think COVID-19 impacts your work?<br />
+      <input type="radio" name="impact_work" value="5" /> Strongly impacted
+      <input type="radio" name="impact_work" value="4" /> 75% impacted
+      <input type="radio" name="impact_work" value="3" /> 50% impacted
+      <input type="radio" name="impact_work" value="2" /> 25% impacted
+      <input type="radio" name="impact_work" value="1" /> No impact
+      <br />
+      <br />
+
+      3. Do you prefer working from home permanently or going back to office
+      after COVID-19?<br />
+      <input type="radio" name="wfh" value="home" /> Work from home
+      <input type="radio" name="wfh" value="office" /> Back to office
+      <br /><br />
+
+      4. Have you already scheduled a vaccine? <br />
+      <input type="radio" name="vaccine" value="yes" /> Yes
+      <input type="radio" name="vaccine" value="no" /> No <br /><br />
+
+      5. If not, will you plan to get vaccinated in the near future? <br />
+      <input type="radio" name="vaccine_later" value="yes" /> Yes
+      <input type="radio" name="vaccine_later" value="no" /> No <br /><br />
+
+      6. Which intervention policie you believe to be most efficient? <br />
+      <input type="radio" name="policy" value="mask" /> Wearing masks
+      <input type="radio" name="policy" value="shelter" /> Shelter-in-place
+      <input type="radio" name="policy" value="wfh" /> Working from home<br /><br />
+
+      7. When do you think the COVID-19 pandemic will end?<br />
+      <input type="radio" name="end" value="next_6_mos" /> Within the next 6
+      months <input type="radio" name="end" value="1_year" /> Within 1 year
+      <input type="radio" name="end" value="never" /> Never<br /><br />
+
+      8. What is the level of satisfaction to our website?<br />
+      <input type="radio" name="satisfaction" value="good" /> Good visualization
+      <input type="radio" name="satisfaction" value="fair" /> Fair visualization
+      <input type="radio" name="satisfaction" value="poor" /> Poor
+      visualization<br /><br />
+
+      9. Do you have any comment on government intervention policies? <br />
+      <textarea name="comment" id="" cols="90" rows="5"></textarea> <br /><br />
+
+      <input type="submit" id="submitButton" value="Submit" />
+    </form>
+  </div>
+</main>
+
+<script
+  src="{{ url_for('static',filename='scripts/survey.js') }}"
+  charset="utf-8"
+></script>
+{% endblock %}

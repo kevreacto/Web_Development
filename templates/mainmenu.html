@@ -1,0 +1,57 @@
+{% extends "index.html" %}
+{% block content %}
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4 h-100">
+
+    <div class="container-fluid text-center" style="font-size: 20px;">
+        <!-- Update upper container -->
+        <div id="upper_container" class="row" style="height: 100px">
+            <div class = "col-3" style="border: 1px solid">
+                <p>Total Case world:</p>
+                <div id="total_case_world">
+                total_case_world
+                </div>
+            </div>
+            <div class = "col-3" style="border: 1px solid">
+                <p>Today Case world:</p>
+                <div id="today_case_world">
+                    today_case_world
+                </div>
+            </div>
+            <div class = "col-3" style="border: 1px solid">
+                <p>Total Case US</p>
+                <div id="total_case_us">
+                    total_case_us
+                </div>
+            </div>
+            <div class = "col-3" style="border: 1px solid">
+                <p>Today Case US</p>
+                <div id="today_case_us">
+                    today_case_us
+                </div>
+            </div>
+        </div>
+
+        <div id="map_linechart_container" class="row" style="height: 800px">
+            <div id="map_container" class="col-9" style="border: 1px solid">
+            </div>
+            <div id="linechart_container" class="col-3 col" style="border: 1px solid">
+                <div id="linechart_container_1" class="col-12" style="border: 1px solid; height: 50%;">
+                    <!-- Covid-19 New Cases -->
+                </div>
+                <div id="linechart_container_2" class="col-12" style="border: 1px solid; height: 50%;">
+                    <!-- Covid-19 Death Cases -->
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<script type="text/javascript" src="{{ url_for('static',filename='scripts/mainmenu.js') }}" charset="utf-8"></script>
+<script type="text/javascript" src="{{ url_for('static',filename='scripts/map_view.js') }}" charset="utf-8"></script>
+<script type="text/javascript" src="{{ url_for('static',filename='scripts/main_menu_linechart_1.js') }}" charset="utf-8"></script>
+<script type="text/javascript" src="{{ url_for('static',filename='scripts/main_menu_linechart_2.js') }}" charset="utf-8"></script>
+<script type="text/javascript" src="{{ url_for('static',filename='scripts/main_menu_top4_number.js') }}" charset="utf-8"></script>
+
+{% endblock %}

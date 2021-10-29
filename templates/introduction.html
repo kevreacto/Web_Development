@@ -1,0 +1,26 @@
+{% extends "index.html" %} {% block content %}
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+  <div
+    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+  >
+    <h1 id="dashboard-name" class="h2">Introduction</h1>
+  </div>
+
+  <!-- Add your content here -->
+  <div class="row">
+    <div class="col-8">
+    <h4>The novel coronavirus (known as COVID-19) rapidly spread around the world, 
+      and has led to dramatic losses of human life and health. </h4>
+      <br>
+    <h4>According to the WHO statistics, 
+      as of March 9, 2021, there have been 116 million confirmed cases including 2.6 million deaths reported globally.</h4>
+    </div>
+      <img src="../static/lib/Covid_19.png" alt="Simply Easy Learning" class="col-4">
+  </div>
+</main>
+
+<script
+  src="{{ url_for('static',filename='scripts/introduction.js') }}"
+  charset="utf-8"
+></script>
+{% endblock %}

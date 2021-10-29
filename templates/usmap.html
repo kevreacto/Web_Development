@@ -1,0 +1,43 @@
+{% extends "index.html" %} {% block content %}
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4 h-100">
+  <div class="container-fluid text-center" style="font-size: 20px">
+    <!-- Add your content here -->
+        <!-- Create us_map section -->
+        <div id="us_map_container" class="row" style="height: 500px">
+            <div id="us_map" class="col-12" style="border: 1px solid">
+            </div>
+        </div>
+
+        <div id="us_line_container" class="row" style="height: 500px">
+
+            <div id="us_line_container_cases" class="col-6" style="height: 500px; border: 1px solid">
+            </div>
+
+            <div id="us_line_container_death" class="col-6" style="height: 500px; border: 1px solid">
+            </div>
+        </div>
+
+        <div id ="us_bar_container" class="row" style="height: 500px; border: 1px solid">
+        </div>
+        
+        <div id="us_vaccine_container" class="row" style="height: 500px">
+        </div>
+
+
+    </div>
+
+  </div>
+</main>
+
+<script type="text/javascript" src="{{ url_for('static',filename='lib/d3.v5.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static',filename='lib/d3-geo-projection.v2.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static',filename='lib/d3-legend.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static',filename='lib/d3-tip.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static',filename='lib/topojson.v2.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static',filename='scripts/usmap.js') }}" charset="utf-8"></script>
+<script type="text/javascript" src="{{ url_for('static',filename='scripts/usmap_view.js') }}" charset="utf-8"></script>
+<script type="text/javascript" src="{{ url_for('static',filename='scripts/us_map_linechart.js') }}" charset="utf-8"></script>
+<script type="text/javascript" src="{{ url_for('static',filename='scripts/us_vaccine.js') }}" charset="utf-8"></script>
+<script type="text/javascript" src="{{ url_for('static',filename='scripts/us_map_linechart_death.js') }}" charset="utf-8"></script>
+
+{% endblock %}

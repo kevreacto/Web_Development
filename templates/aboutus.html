@@ -1,0 +1,30 @@
+{% extends "index.html" %} {% block content %}
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+  <div
+    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+  >
+    <h1 id="dashboard-name" class="h2">About us & Motivation</h1>
+  </div>
+
+  <!-- Add your content here -->
+  <div>
+    <div class="row" >
+      <div class = "col-6">
+        <h5>We are a team with a singular shared mission: Use technology to improve human lives!</h>
+        <br><br>
+        <h5>On January 21, 2021, during the pandemic of COVID-19, a group of passionate, curious individuals with diversed backgrounds met on Georgia Tech CSE 6242.</h>
+        <br><br>
+        <h5>The novel coronavirus(known as COVID-19) rapidly spread around the world, and has led to dramatic losses of human life and health.</h5>
+        <br><br>
+        <h5>Being as computer/data science students, we would like to explore an understandable and interactive visualization dashboard to keep the public informed.</h5>
+        </div>
+      <img src="../static/lib/team_work.jpg" alt="Simply Easy Learning"  class="col-6">
+    </div>
+  </div>
+</main>
+
+<script
+  src="{{ url_for('static',filename='scripts/about_us.js') }}"
+  charset="utf-8"
+></script>
+{% endblock %}

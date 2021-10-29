@@ -1,0 +1,34 @@
+{% extends "index.html" %} {% block content %}
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+  <div
+    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+  >
+    <h1 id="dashboard-name" class="h2">California COVID-19 Daily Updates: County Level Data</h1>
+  </div>
+
+  <!-- Add your content here -->
+<div class="container-fluid text-center" style="font-size: 20px;">
+  <!-- <div id="map_container" class="row" style="height: 800px; border: 1px solid">
+  </div> -->
+
+
+
+
+  <div id="linechart_container" class="row" style="height: 800px;">
+    <div id="map_container" class="col-6" style="height: 100%;">
+        <!-- Covid-19 New Cases -->
+    </div>
+    <div id="table_container" class="col-6" style="height: 100%;">
+        <!-- Covid-19 Death Cases -->
+    </div>
+
+</div>
+  
+
+</div>
+</main>
+
+
+<script type="text/javascript" src="{{ url_for('static',filename='scripts/CA_county.js') }}" 
+                                charset="utf-8"></script>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "index.html" %} {% block content %}
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+  <div
+    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+  >
+    <h1 id="dashboard-name" class="h2">Arima Model & Prediction</h1>
+  </div>
+
+  <!-- Add your content here -->
+  <div class="container-fluid text-center" style="font-size: 20px;">
+    <div id="dropdown_container">
+      <text>Select Data Source:</text>
+    </div>
+    <div id="map_container" class="row" style="height: 800px; border: 1px solid">
+    </div>
+    <div id="introduction_container" class="row" style="border: 1px solid">
+      ARIMA model was utilized to forecast COVID-19 deaths and new coronavirus infections as the data has obvious trend and seasonality feature. ARIMA model includes autoregressive (AR) model, moving average (MA) model, and seasonal autoregressive integrated moving average (SARIMA) model. We used Auto Arima python package  to find the best model with the lowest AIC value.
+    </div>
+  </div>
+</main>
+
+<script
+  src="{{ url_for('static',filename='scripts/Arima_model.js') }}"
+  charset="utf-8"
+></script>
+{% endblock %}

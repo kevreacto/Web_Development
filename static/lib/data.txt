@@ -1,0 +1,17 @@
+male,below_18,4,4,home,yes,no,shelter,1_year,fair,aaaaaa
+male,35 to 65,3,3,office,no,no,wfh,1_year,poor,bbbbb
+male,18 to 35,4,4,office,yes,no,wfh,1_year,fair,ccccc
+male,35 to 65,4,4,office,yes,yes,shelter,next_6_mos,good,ddddd
+male,below_18,3,4,office,no,no,wfh,never,poor,ffff
+male,below_18,2,2,home,yes,yes,mask,1_year,fair,ooooooo
+male,35 to 65,4,4,office,yes,yes,mask,1_year,fair,oooooo
+male,below_18,4,4,office,no,no,shelter,1_year,fair,
+female,below_18,4,4,office,no,no,mask,next_6_mos,good,
+male,below_18,5,4,office,no,no,shelter,1_year,fair,
+male,below_18,5,4,office,no,no,shelter,1_year,fair,
+male,below_18,5,5,home,yes,yes,mask,next_6_mos,good,
+male,below_18,5,5,home,yes,yes,mask,next_6_mos,good,
+male,below_18,5,5,home,yes,yes,mask,next_6_mos,good,
+male,below_18,5,5,home,yes,yes,mask,next_6_mos,good,
+male,below_18,5,5,home,yes,yes,mask,next_6_mos,good,
+male,below_18,4,4,office,no,yes,mask,next_6_mos,good,

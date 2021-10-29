@@ -1,0 +1,63 @@
+{% extends "index.html" %} {% block content %}
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+  <div
+    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+  >
+    <h1 id="dashboard-name" class="h2">SIR Model</h1>
+  </div>
+
+  <div>
+    <p>
+      In addition to ARIMA model, one of the machine learning methods, we also
+      built a SIR model to forecast the spread of COVID-19. SIR model is one of
+      the most representative compartmental models in epidemiology. It
+      calculates the hypothetical number of infectious people over time
+      considering removed infectious cases and assuming the total number of
+      population remain constant. SIR model has three main components:
+      <br /><br />
+
+      S: number of susceptible people <br />
+      I: number number of infectious people <br />
+      R: number of removed infectious people <br /><br />
+      In this webpage, we allow users to adjust the two parameters of SIR Model:
+      Beta and Gamma. <br /><br />
+      Beta (β) is the infectious rate. According the theory (from wiki), Beta
+      (β) is the average number of contacts per person per time, multiplied by
+      the probability of disease transmission in a contact between a susceptible
+      and an infectious subject. The higher the beta, the faster the COVID-19
+      could transmit. The other parameter Gamma (γ) is the recovery rate. 1/
+      γ is the infectious <br /><br />
+
+      Based on your expectation, you can adjust Beta and Gamma parameters. After
+      taking effective public health intervention methods such as wearing masks,
+      keeping social distance, washing hands, increasing vaccination coverage,
+      we can lower the infectious rate (beta) and reduce the spread of COVID-19.
+      With enhanced medical treatment solutions, we can shorter the recovery
+      period and improve Gamma ratio. <br /><br />
+      Feel free to play with Beta and Gamma to create your own SIR model. What
+      you need to do is to input a Beta and a recovery date (1/γ). You can try
+      different assumptions to see how COVID-19 spread will change over time.
+    </p>
+  </div>
+
+  <div>
+    <form id="si_form" action="/SISubmit" method="POST">
+      beta (0 ~ 1): <br /><input type="text" id="a" name="a" /><br />
+      average duration of infection (days): <br /><input
+        type="text"
+        id="b"
+        name="b"
+      /><br />
+      <input type="submit" value="Submit" />
+    </form>
+  </div>
+
+  <!-- Add your content here -->
+  <!-- <div id="SI_model_linechart"></div> -->
+</main>
+
+<script
+  src="{{ url_for('static',filename='scripts/SI_model.js') }}"
+  charset="utf-8"
+></script>
+{% endblock %}
