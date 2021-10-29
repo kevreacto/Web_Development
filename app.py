@@ -1,6 +1,7 @@
 import datetime
 import json
 import os
+import locale
 
 from flask import Flask, jsonify, render_template, request, redirect
 import atexit
@@ -90,10 +91,10 @@ def get_main_top4_number():
     today_case_us = total_case_us - float(parsed_csv[-2]["United States"])
 
     result = {
-        "total_case_world": total_case_world,
-        "today_case_world": today_case_world,
-        "total_case_us": total_case_us,
-        "today_case_us": today_case_us
+        "total_case_world": '{:,.0f}'.format(total_case_world),
+        "today_case_world": '{:,.0f}'.format(today_case_world),
+        "total_case_us": '{:,.0f}'.format(total_case_us),
+        "today_case_us": '{:,.0f}'.format(today_case_us)
     }
 
     return jsonify(result)
