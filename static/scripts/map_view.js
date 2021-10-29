@@ -1,13 +1,13 @@
-$(document).ready(function(){
-    $.getJSON("/LatestWorldData", function(data){
+$(document).ready(function () {
+    $.getJSON("/LatestWorldData", function (data) {
         var latest_world_data = new Map(Object.entries(data));
         console.log(latest_world_data);
 
         /* Draw map view here */
         d3.json("../static/lib/world_countries.json")
-        .then( function(data){
-            draw_world_map(data, latest_world_data);
-        });
+            .then(function (data) {
+                draw_world_map(data, latest_world_data);
+            });
 
     });
 });
@@ -16,11 +16,11 @@ function draw_world_map(world, latest_world_data) {
     var chart_width = $("#map_container").width()
     var chart_height = $("#map_container").height()
 
-    var margin = {top: 30, right: 30, bottom: 20, left: 20};
+    var margin = { top: 30, right: 30, bottom: 20, left: 20 };
     var width = chart_width - margin.left - margin.right;
     var height = chart_height - margin.top - margin.bottom;
 
-    var colors = ['#fff5f0','#fee0d2','#fcbba1','#fc9272','#fb6a4a','#ef3b2c','#cb181d','#a50f15','#67000d']
+    var colors = ['#fff5f0', '#fee0d2', '#fcbba1', '#fc9272', '#fb6a4a', '#ef3b2c', '#cb181d', '#a50f15', '#67000d']
     var case_number = Array.from(latest_world_data.values()).map(num_str => parseInt(num_str));
 
     quantile = d3.scaleQuantile()
@@ -51,13 +51,13 @@ function draw_world_map(world, latest_world_data) {
 
     var tip = d3.tip()
         .attr('class', 'd3-tip')
-        .html(function(d){
+        .html(function (d) {
             var country = d.properties.name;
-            if (latest_world_data.has(country)){
+            if (latest_world_data.has(country)) {
                 var cases = parseInt(latest_world_data.get(country));
                 return "<span style='color:white'>" +
                     "Country: " + country +
-                    "<br>Cases: " + cases +
+                    "<br>Casesssss: " + d3.format(',')(cases) +
                     "</span>";
             } else {
                 return "<span style='color:white'>" +
@@ -70,7 +70,7 @@ function draw_world_map(world, latest_world_data) {
 
     // Draw map and fill color
     var choro = svg.append("g")
-        .attr("class","states")
+        .attr("class", "states")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
         .selectAll("path")
         .data(world.features)
@@ -79,7 +79,7 @@ function draw_world_map(world, latest_world_data) {
         .attr("d", path)
         .attr("stroke", "white")
         .attr("stroke-width", 1)
-        .attr("fill", function(d) {
+        .attr("fill", function (d) {
             if (latest_world_data.has(d.properties.name)) {
                 return quantile(latest_world_data.get(d.properties.name));
             } else {
@@ -92,11 +92,11 @@ function draw_world_map(world, latest_world_data) {
     // Add legend
     var legend = svg.append("g")
         .attr("id", "legend")
-        .attr("transform","translate(" + (margin.left) + "," + (height) + ")");
+        .attr("transform", "translate(" + (margin.left) + "," + (height) + ")");
 
     quantile_intervals = new Array();
     quantiles = quantile.quantiles().map(num_str => parseInt(num_str));
-    for (var i = 0; i < quantiles.length; i ++) {
+    for (var i = 0; i < quantiles.length; i++) {
         if (i == 0) {
             quantile_intervals.push([d3.min(case_number), quantiles[i]]);
             quantile_intervals.push([quantiles[i], quantiles[i + 1]]);
@@ -112,7 +112,7 @@ function draw_world_map(world, latest_world_data) {
         .data(quantile_intervals)
         .enter()
         .append("rect")
-        .attr("x", function(d, i){
+        .attr("x", function (d, i) {
             if (i == quantile_intervals.length - 1) {
                 return width / quantile_intervals.length * i + 20;
             } else {
@@ -122,7 +122,7 @@ function draw_world_map(world, latest_world_data) {
         .attr("y", 0)
         .attr("height", 15)
         .attr("width", 15)
-        .attr("fill", function(d, i){
+        .attr("fill", function (d, i) {
             if (i == quantile_intervals.length - 1) {
                 return "grey";
             } else {
@@ -130,7 +130,7 @@ function draw_world_map(world, latest_world_data) {
             }
         });
 
-    for (let i = 0; i < quantile_intervals.length; i ++) {
+    for (let i = 0; i < quantile_intervals.length; i++) {
         var interval = quantile_intervals[i];
         if (i < quantile_intervals.length - 1) {
             legend.append("text")
