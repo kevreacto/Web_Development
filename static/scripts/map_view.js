@@ -57,7 +57,7 @@ function draw_world_map(world, latest_world_data) {
                 var cases = parseInt(latest_world_data.get(country));
                 return "<span style='color:white'>" +
                     "Country: " + country +
-                    "<br>Casesssss: " + d3.format(',')(cases) +
+                    "<br>Cases: " + d3.format(',')(cases) +
                     "</span>";
             } else {
                 return "<span style='color:white'>" +
@@ -106,6 +106,8 @@ function draw_world_map(world, latest_world_data) {
             quantile_intervals.push([quantiles[i], quantiles[i + 1]]);
         }
     }
+    console.log(quantile_intervals)
+
     quantile_intervals.push([]); // add an empty array as no data placeholder
 
     legend.selectAll("rect")
@@ -136,7 +138,7 @@ function draw_world_map(world, latest_world_data) {
             legend.append("text")
                 .attr("transform", "translate(" + (width / quantile_intervals.length * i + 20) + "," + 10 + ")")
                 .style("font-size", "10px")
-                .text(interval[0] + " - " + interval[1]);
+                .text(d3.format(',')(interval[0]) + " - " + d3.format(',')(interval[1]));
         } else {
             legend.append("text")
                 .attr("transform", "translate(" + (width / quantile_intervals.length * i + 45) + "," + 10 + ")")

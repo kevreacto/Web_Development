@@ -9,7 +9,7 @@ $(document).ready(function () {
             myArray.push([d.county, d3.format(',')(d.totalCaseData), d3.format(',')(d.totalDeathData)]);
         });
 
-        //Make the Table
+        //Make the Table of the number of vaccination at each county
         var table = d3.select("#table_container")
             .append("table")
             .style("border", "5px black solid");
@@ -113,6 +113,7 @@ $(document).ready(function () {
             cases_color_array.push(parseFloat(county_Data[0][i].confirmed_cases));
         }
         cases_color_array.sort(d3.ascending);
+
 
         var color = d3.scaleQuantile()
             .domain([d3.quantile(cases_color_array, 0), d3.quantile(cases_color_array, 0.2), d3.quantile(cases_color_array, 0.4), d3.quantile(cases_color_array, 0.6), d3.quantile(cases_color_array, 0.8), d3.quantile(cases_color_array, 1)])

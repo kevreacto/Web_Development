@@ -64,10 +64,11 @@ $(document).ready(function () {
       .attr("transform", "translate(0," + height + ")")
       .call(xaxis)
       .selectAll("text")
-      .attr("y", 0)
-      .attr("x", 9)
-      .attr("transform", "rotate(60)")
-      .style("text-anchor", "start");
+      // .attr("y", 0)
+      // .attr("x", 9)
+      // .attr("transform", "rotate(60)")
+      .attr("transform", "translate(-10,0)rotate(-45)")
+      .style("text-anchor", "end");
 
     //YAXIS-0
     var y = d3.scaleLinear().rangeRound([height, 0]);
@@ -115,7 +116,7 @@ $(document).ready(function () {
       .y(function (d) {
         return y(d.new_cases);
       });
-    console.log(data);
+    // console.log(data);
 
     svg
       .append("path")
@@ -153,7 +154,7 @@ $(document).ready(function () {
       .y(function (d) {
         return y1(d.total_cases);
       });
-    console.log(data);
+    // console.log(data);
 
     svg
       .append("path")
