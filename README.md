@@ -1,4 +1,4 @@
-# Team-project
+# Project Overall
   
 We published our project to heroku, people can easily access our project through the URL:
   
