@@ -2,4 +2,3 @@ flask
 statsmodels
 gunicorn
 requests
-python
